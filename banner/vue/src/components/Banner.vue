@@ -4,16 +4,7 @@
       <h1>{{ banner.title }}</h1>
       <h2>{{ banner.subtitle }}</h2>
     </header>
-    <img
-      :src="
-        banner.image
-          .url()
-          .width(1200)
-          .height(680)
-          .build()
-      "
-      alt=""
-    />
+    <img :src="banner.image.url().width(1200).height(680).build()" alt="" />
     <a :href="banner.link.url">
       {{ banner.link.title }}
     </a>
@@ -24,8 +15,8 @@
 export default {
   name: 'Banner',
   props: {
-    banner: Object
-  }
+    banner: Object,
+  },
 };
 </script>
 
