@@ -1,43 +1,45 @@
 <template>
-  <div class="banner-container">
-    <div class="banner-content">
-      <h1 class="banner-title">{{ banner.bannerTitle }}</h1>
-      <h2 class="banner-subtitle">{{ banner.bannerSubtitle }}</h2>
-    </div>
+  <section>
+    <header>
+      <h1>{{ banner.title }}</h1>
+      <h2>{{ banner.subtitle }}</h2>
+    </header>
     <img
-      :src="banner.bannerImage"
-      alt="background"
-      class="banner-background-image"
+      :src="
+        banner.image
+          .url()
+          .width(1200)
+          .height(680)
+          .build()
+      "
+      alt=""
     />
-    <a :href="banner.linkUrl" class="link">
-      {{ banner.linkTitle }}
+    <a :href="banner.link.url">
+      {{ banner.link.title }}
     </a>
-  </div>
+  </section>
 </template>
 
 <script>
 export default {
-  name: "Banner",
+  name: 'Banner',
   props: {
-    banner: Object,
-  },
+    banner: Object
+  }
 };
 </script>
 
 <style scoped>
 @import url(https://fonts.googleapis.com/css?family=Roboto);
-
-.banner-container {
+section {
   font-family: Roboto, Arial, Helvetica, sans-serif;
   position: relative;
   width: 100%;
 }
-
-.banner-title {
+h1 {
   font-size: 30px;
 }
-
-.banner-content {
+header {
   position: absolute;
   top: 20px;
   width: 100%;
@@ -45,13 +47,11 @@ export default {
   text-align: left;
   color: white;
 }
-
-.banner-background-image {
+img {
   width: 100%;
   height: auto;
 }
-
-.link {
+a {
   position: absolute;
   bottom: 20px;
   background-color: rgba(0, 0, 0, 0.5);
@@ -60,8 +60,7 @@ export default {
   padding: 10px;
   text-decoration: none;
 }
-
-.link:hover {
+a:hover {
   background-color: rgba(0, 0, 0, 1);
 }
 </style>
