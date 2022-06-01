@@ -18,7 +18,8 @@ export class AppComponent implements OnInit {
   }
 
   async fetchBanner() {
-    const { body } = await this.client.getContentItemByKey(this.deliveryKey);
-    this.banner = body;
+    this.client.getContentItemByKey(this.deliveryKey).then(({ body }) => {
+      this.banner = body;
+    });
   }
 }
