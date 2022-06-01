@@ -32,5 +32,5 @@ function renderBanner(banner) {
       </a>
     </section>
   `;
-  document.getElementById('app').innerHTML = template;
+  document.body.innerHTML = template;
 }
