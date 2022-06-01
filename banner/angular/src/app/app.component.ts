@@ -7,15 +7,15 @@ import { ContentClient } from 'dc-delivery-sdk-js';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  async ngOnInit() {
-    await this.fetchBanner();
-  }
-
   banner: any;
   deliveryKey = 'example-banner';
   client = new ContentClient({
     hubName: 'ampengineering',
   });
+
+  ngOnInit() {
+    this.fetchBanner();
+  }
 
   async fetchBanner() {
     const { body } = await this.client.getContentItemByKey(this.deliveryKey);
