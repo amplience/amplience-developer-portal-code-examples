@@ -1,6 +1,6 @@
 import './styles.css';
 import React, { useEffect, useState } from 'react';
-import { ContentClient, Image } from 'dc-delivery-sdk-js';
+import { ContentClient } from 'dc-delivery-sdk-js';
 import Banner from './Components/Banner';
 
 const client = new ContentClient({
@@ -10,7 +10,7 @@ const client = new ContentClient({
 const deliveryKey = 'example-banner';
 
 export default function App() {
-  const [banner, setBanner] = useState(null);
+  const [banner, setBanner] = useState();
 
   useEffect(() => {
     async function fetchBanner() {
@@ -22,5 +22,5 @@ export default function App() {
     fetchBanner();
   }, []);
 
-  return <Banner {...banner} />;
+  return banner && <Banner {...banner} />;
 }

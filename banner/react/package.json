@@ -9,13 +9,11 @@
   "main": "src/index.js",
   "dependencies": {
     "dc-delivery-sdk-js": "0.11.0",
-    "react": "18.0.0",
-    "react-dom": "18.0.0",
-    "react-scripts": "4.0.0"
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
   },
   "devDependencies": {
-    "@babel/runtime": "7.13.8",
-    "typescript": "4.1.3"
+    "react-scripts": "latest"
   },
   "scripts": {
     "start": "react-scripts start",

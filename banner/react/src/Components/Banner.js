@@ -1,8 +1,8 @@
 import React from 'react';
 import './banner.css';
 
-const Banner = ({ title, subtitle, image, link }) => {
-  const src = image.url().width(1200).height(680).build();
+const Banner = ({ title, subtitle, image, link = {} }) => {
+  const src = image?.url().width(1200).height(680).build();
 
   return (
     <section className="banner">
