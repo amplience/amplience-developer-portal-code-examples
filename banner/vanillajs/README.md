@@ -1,4 +1,4 @@
-# VanillaJS Banner
+# Vanilla JS Banner
 
 ## Getting started
 
