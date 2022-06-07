@@ -7,10 +7,10 @@ const client = new ContentClient({
   hubName: 'ampengineering',
 });
 
-const deliveryKey = 'example-banner';
+const deliveryKey = 'banner-example';
 
 export default function App() {
-  const [banner, setBanner] = useState();
+  const [banner, setBanner] = useState(null);
 
   useEffect(() => {
     async function fetchBanner() {
