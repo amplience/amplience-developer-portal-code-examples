@@ -3,7 +3,7 @@
   "$id": "https://developer-portal-examples.com/banner",
 
   "title": "Example Banner",
-  "description": "Banner for code examples in developer portal",
+  "description": "Banner used for code examples in developer portal",
 
   "allOf": [
     {
@@ -13,36 +13,47 @@
 
   "type": "object",
   "properties": {
-    "title": {
-      "title": "Title",
-      "description": "Banner title",
+    "headline": {
+      "title": "Headline",
+      "description": "The main title of this banner",
       "type": "string"
     },
-    "subtitle": {
-      "title": "Subtitle",
-      "description": "Banner subtitle",
+    "strapline": {
+      "title": "Strapline",
+      "description": "The subtitle of this banner",
       "type": "string"
     },
-    "image": {
-      "title": "Image",
-      "description": "Banner image",
-      "allOf": [
-        {
-          "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+    "background": {
+      "type": "object",
+      "title": "Background image",
+      "properties": {
+        "alt": {
+          "title": "Alternative text",
+          "description": "Alternative text for the background image"
+        },
+        "image": {
+          "title": "Background image",
+          "description": "The background image of this banner",
+          "allOf": [
+            {
+              "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+            }
+          ]
         }
-      ]
+      }
     },
     "link": {
       "type": "object",
+      "title": "Link",
       "properties": {
         "url": {
           "title": "URL",
-          "description": "Link URL",
+          "description": "The url that will be opened when call to action is clicked",
           "type": "string"
         },
         "title": {
           "title": "Title",
-          "description": "Link title",
+          "description": "Text displayed for the call to action",
           "type": "string"
         }
       }
