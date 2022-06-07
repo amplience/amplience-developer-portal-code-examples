@@ -13,23 +13,23 @@
 
   "type": "object",
   "properties": {
-    "title": {
-      "title": "Title",
-      "description": "Main title of this banner",
+    "headline": {
+      "title": "Headline",
+      "description": "The main title of this banner",
       "type": "string"
     },
-    "subtitle": {
-      "title": "Subtitle",
-      "description": "Secondary title of this banner",
+    "strapline": {
+      "title": "Strapline",
+      "description": "The subtitle of this banner",
       "type": "string"
     },
-    "accessibleImage": {
+    "background": {
       "type": "object",
-      "title": "Accessible background image",
+      "title": "Background image",
       "properties": {
         "alt": {
           "title": "Alternative text",
-          "description": "Alternative text for the image"
+          "description": "Alternative text for the background image"
         },
         "image": {
           "title": "Background image",
