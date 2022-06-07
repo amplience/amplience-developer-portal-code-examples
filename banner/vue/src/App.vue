@@ -1,31 +1,31 @@
 <template>
-  <Banner v-if="banner" :banner="banner" />
+  <Banner v-if="banner" v-bind="banner" />
 </template>
 
-<script type="module">
+<script>
 import { ContentClient } from 'dc-delivery-sdk-js';
 import BannerVue from './components/Banner.vue';
 export default {
   name: 'App',
   components: {
-    Banner: BannerVue,
+    Banner: BannerVue
   },
   async created() {
     await this.fetchBanner();
   },
-  data: function () {
+  data: function() {
     return {
       client: new ContentClient({ hubName: 'ampengineering' }),
-      deliveryKey: 'example-banner',
-      banner: null,
+      deliveryKey: 'banner-example',
+      banner: null
     };
   },
   methods: {
     async fetchBanner() {
       const { body } = await this.client.getContentItemByKey(this.deliveryKey);
       this.banner = body;
-    },
-  },
+    }
+  }
 };
 </script>
 

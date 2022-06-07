@@ -1,12 +1,12 @@
 <template>
   <section>
     <header>
-      <h1>{{ banner.title }}</h1>
-      <h2>{{ banner.subtitle }}</h2>
+      <h1>{{ headline }}</h1>
+      <h2>{{ strapline }}</h2>
     </header>
-    <img :src="banner.image.url().width(1200).height(680).build()" alt="" />
-    <a :href="banner.link.url">
-      {{ banner.link.title }}
+    <img :src="background.image.url().build()" :alt="background.alt" />
+    <a :href="link.url">
+      {{ link.title }}
     </a>
   </section>
 </template>
@@ -15,8 +15,11 @@
 export default {
   name: 'Banner',
   props: {
-    banner: Object,
-  },
+    headline: String,
+    strapline: String,
+    background: Object,
+    link: Object
+  }
 };
 </script>
 
