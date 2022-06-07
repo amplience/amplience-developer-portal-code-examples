@@ -1,3 +1,8 @@
 {
-  "node": "16"
+  "template": "node",
+  "container": {
+    "port": 3212,
+    "startScript": "serve",
+    "node": "16"
+  }
 }
