@@ -1,0 +1,23 @@
+{
+  "devDependencies": {
+    "prettier": "^2.6.2"
+  },
+  "name": "amplience-developer-portal-code-examples",
+  "description": "Code examples for the Amplience Developer Portal: https://github.com/amplience/amplience-developer-portal",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --write  ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amplience/amplience-developer-portal-code-examples.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amplience/amplience-developer-portal-code-examples/issues"
+  },
+  "homepage": "https://github.com/amplience/amplience-developer-portal-code-examples#readme"
+}

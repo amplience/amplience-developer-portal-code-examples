@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://schema-examples.com/tutorial-banner",
+
+  "title": "Example Banner",
+  "description": "Banner used for code examples in developer portal",
+
+  "allOf": [
+    {
+      "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+    }
+  ],
+
+  "type": "object",
+  "properties": {
+    "headline": {
+      "title": "Headline",
+      "description": "The main title of this banner",
+      "type": "string"
+    },
+    "strapline": {
+      "title": "Strapline",
+      "description": "The subtitle of this banner",
+      "type": "string"
+    },
+    "background": {
+      "type": "object",
+      "title": "Background image",
+      "properties": {
+        "alt": {
+          "title": "Alternative text",
+          "description": "Alternative text for the background image",
+          "type": "string"
+        },
+        "image": {
+          "title": "Background image",
+          "description": "The background image of this banner",
+          "allOf": [
+            {
+              "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+            }
+          ]
+        }
+      }
+    },
+    "link": {
+      "type": "object",
+      "title": "Link",
+      "properties": {
+        "url": {
+          "title": "URL",
+          "description": "The url that will be opened when call to action is clicked",
+          "type": "string"
+        },
+        "title": {
+          "title": "Title",
+          "description": "Text displayed for the call to action",
+          "type": "string"
+        }
+      }
+    }
+  },
+  "propertyOrder": []
+}
