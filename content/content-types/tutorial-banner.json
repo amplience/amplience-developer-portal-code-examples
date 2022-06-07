@@ -1,8 +1,8 @@
 {
-  "contentTypeUri": "https://developer-portal-examples.com/banner",
+  "contentTypeUri": "https://schema-examples.com/tutorial-banner",
   "status": "ACTIVE",
   "settings": {
-    "label": "Example banner",
+    "label": "Tutorial banner",
     "icons": [
       {
         "size": 256,

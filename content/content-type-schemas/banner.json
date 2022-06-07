@@ -1,5 +1,0 @@
-{
-  "body": "./schemas/banner-schema.json",
-  "schemaId": "https://developer-portal-examples.com/banner",
-  "validationLevel": "CONTENT_TYPE"
-}
