@@ -1,13 +1,13 @@
 <section class="banner">
   <header>
-    <h1>{{ banner?.title }}</h1>
-    <h2>{{ banner?.subtitle }}</h2>
+    <h1>{{ banner.headline }}</h1>
+    <h2>{{ banner.strapline }}</h2>
   </header>
   <img
-    src="{{ banner?.image?.url().width(1200).height(680).build() }}"
-    alt=""
+    src="{{ banner.background.image.url().build() }}"
+    alt="{{ banner.background.alt }}"
   />
-  <a href="{{ banner?.link.url }}">
-    {{ banner?.link.title }}
+  <a href="{{ banner.link.url }}">
+    {{ banner.link.title }}
   </a>
 </section>
