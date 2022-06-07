@@ -6,11 +6,9 @@ const client = new ContentClient({
   hubName: 'ampengineering',
 });
 
-fetchBanner().then(response => renderBanner(response.body));
-
-async function fetchBanner() {
-  return await client.getContentItemByKey(deliveryKey);
-}
+client
+  .getContentItemByKey(deliveryKey)
+  .then(response => renderBanner(response.body));
 
 function renderBanner(banner) {
   if (!banner) {

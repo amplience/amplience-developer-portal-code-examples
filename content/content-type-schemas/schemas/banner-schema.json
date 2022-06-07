@@ -3,7 +3,7 @@
   "$id": "https://developer-portal-examples.com/banner",
 
   "title": "Example Banner",
-  "description": "Banner for code examples in developer portal",
+  "description": "Banner used for code examples in developer portal",
 
   "allOf": [
     {
@@ -15,34 +15,45 @@
   "properties": {
     "title": {
       "title": "Title",
-      "description": "Banner title",
+      "description": "Main title of this banner",
       "type": "string"
     },
     "subtitle": {
       "title": "Subtitle",
-      "description": "Banner subtitle",
+      "description": "Secondary title of this banner",
       "type": "string"
     },
-    "image": {
-      "title": "Image",
-      "description": "Banner image",
-      "allOf": [
-        {
-          "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+    "accessibleImage": {
+      "type": "object",
+      "title": "Accessible background image",
+      "properties": {
+        "alt": {
+          "title": "Alternative text",
+          "description": "Alternative text for the image"
+        },
+        "image": {
+          "title": "Background image",
+          "description": "The background image of this banner",
+          "allOf": [
+            {
+              "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+            }
+          ]
         }
-      ]
+      }
     },
     "link": {
       "type": "object",
+      "title": "Link",
       "properties": {
         "url": {
           "title": "URL",
-          "description": "Link URL",
+          "description": "The url that will be opened when call to action is clicked",
           "type": "string"
         },
         "title": {
           "title": "Title",
-          "description": "Link title",
+          "description": "Text displayed for the call to action",
           "type": "string"
         }
       }
