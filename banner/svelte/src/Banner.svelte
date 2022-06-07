@@ -1,18 +1,16 @@
 <script>
-  export let title;
-  export let subtitle;
-  export let image;
+  export let headline;
+  export let strapline;
+  export let background;
   export let link;
-
-  $: src = image.url().width(1200).height(680).build();
 </script>
 
 <section class="banner">
   <header>
-    <h1>{title}</h1>
-    <h2>{subtitle}</h2>
+    <h1>{headline}</h1>
+    <h2>{strapline}</h2>
   </header>
-  <img {src} alt="" />
+  <img src={background.image.url().build()} alt={background.alt} />
   <a href={link?.url}>{link?.title}</a>
 </section>
 

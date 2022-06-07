@@ -9,17 +9,16 @@
     hubName: 'ampengineering',
   });
 
-  const deliveryKey = 'example-banner';
+  const deliveryKey = 'banner-example';
 
-  async function fetchBanner() {
-    banner = await client.getContentItemByKey(deliveryKey);
-  }
-
-  onMount(() => fetchBanner());
+  onMount(async () => {
+    const { body } = await client.getContentItemByKey(deliveryKey);
+    banner = body;
+  });
 </script>
 
 <main>
   {#if banner}
-    <Banner {...banner.body} />
+    <Banner {...banner} />
   {/if}
 </main>
