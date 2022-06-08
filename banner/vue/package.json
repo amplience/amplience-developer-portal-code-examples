@@ -9,7 +9,8 @@
   },
   "type": "commonjs",
   "dependencies": {
-    "dc-delivery-sdk-js": "0.11.0",
+    "dc-delivery-sdk-js-main": "amplience/dc-delivery-sdk-js#master",
+    "dc-delivery-sdk-js": "file:./node_modules/dc-delivery-sdk-js-main/build/main",
     "vue": "^3.2.33"
   },
   "devDependencies": {
