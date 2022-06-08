@@ -1,8 +1,5 @@
-import './styles.css';
-import { ContentClient } from 'dc-delivery-sdk-js';
-
 const deliveryKey = 'banner-example';
-const client = new ContentClient({
+const client = new ampDynamicContent.ContentClient({
   hubName: 'ampengineering',
 });
 
