@@ -1,0 +1,5 @@
+{
+  "body": "./schemas/tutorial-banner.json",
+  "schemaId": "https://schema-examples.com/tutorial-banner",
+  "validationLevel": "CONTENT_TYPE"
+}
