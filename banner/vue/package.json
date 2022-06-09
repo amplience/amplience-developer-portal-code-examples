@@ -15,8 +15,7 @@
     "vite": "^2.9.9",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^7.0.0-0",
-    "@vue/cli-plugin-eslint": "~4.5.0",
-    "babel-eslint": "^10.1.0"
+    "@vue/cli-plugin-eslint": "~4.5.0"
   },
   "eslintConfig": {
     "root": true,
@@ -24,12 +23,8 @@
       "node": true
     },
     "extends": [
-      "plugin:vue/vue3-essential",
-      "eslint:recommended"
+      "plugin:vue/vue3-essential"
     ],
-    "parserOptions": {
-      "parser": "babel-eslint"
-    },
     "rules": {}
   }
 }
