@@ -21,6 +21,7 @@
     font-family: Roboto, Arial, Helvetica, sans-serif;
     position: relative;
     width: 100%;
+    min-width: 500px;
   }
 
   .banner h1 {
