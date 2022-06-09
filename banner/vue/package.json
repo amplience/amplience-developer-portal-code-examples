@@ -1,44 +1,17 @@
 {
-  "name": "vue-3",
-  "version": "0.1.0",
-  "private": true,
+  "name": "vue-project",
+  "version": "0.0.0",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview --port 4173"
   },
-  "type": "commonjs",
   "dependencies": {
-    "dc-delivery-sdk-js-main": "amplience/dc-delivery-sdk-js#master",
-    "dc-delivery-sdk-js": "file:./node_modules/dc-delivery-sdk-js-main/build/main",
-    "vue": "^3.2.33"
+    "dc-delivery-sdk-js": "^0.11.0",
+    "vue": "^3.2.36"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "~4.5.0",
-    "@vue/cli-plugin-eslint": "~4.5.0",
-    "@vue/cli-service": "~4.5.0",
-    "@vue/compiler-sfc": "^3.0.0-0",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^7.0.0-0"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/vue3-essential",
-      "eslint:recommended"
-    ],
-    "parserOptions": {
-      "parser": "babel-eslint"
-    },
-    "rules": {}
-  },
-  "browserslist": [
-    "last 1 chrome version"
-  ],
-  "keywords": [],
-  "description": ""
+    "@vitejs/plugin-vue": "^2.3.3",
+    "vite": "^2.9.9"
+  }
 }
