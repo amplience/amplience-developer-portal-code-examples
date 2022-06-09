@@ -1,0 +1,13 @@
+<section class="banner">
+  <header>
+    <h1>{{ banner.headline }}</h1>
+    <h2>{{ banner.strapline }}</h2>
+  </header>
+  <img
+    src="{{ banner.background.image.url().build() }}"
+    alt="{{ banner.background.alt }}"
+  />
+  <a href="{{ banner.link.url }}">
+    {{ banner.link.title }}
+  </a>
+</section>
