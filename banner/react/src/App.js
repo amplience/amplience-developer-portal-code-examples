@@ -1,7 +1,7 @@
 import './styles.css';
 import React, { useEffect, useState } from 'react';
 import { ContentClient } from 'dc-delivery-sdk-js';
-import Banner from './Components/Banner';
+import Banner from './Banner';
 
 const client = new ContentClient({
   hubName: 'ampengineering',

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ContentBody, ContentClient, Image } from 'dc-delivery-sdk-js';
+import { ContentBody, Image } from 'dc-delivery-sdk-js';
 
 export interface Banner extends ContentBody {
   headline: string;
