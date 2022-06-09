@@ -8,24 +8,24 @@ import BannerVue from './components/Banner.vue';
 export default {
   name: 'App',
   components: {
-    Banner: BannerVue
+    Banner: BannerVue,
   },
   async created() {
     await this.fetchBanner();
   },
-  data: function() {
+  data: function () {
     return {
       client: new ContentClient({ hubName: 'ampengineering' }),
       deliveryKey: 'banner-example',
-      banner: null
+      banner: null,
     };
   },
   methods: {
     async fetchBanner() {
       const { body } = await this.client.getContentItemByKey(this.deliveryKey);
       this.banner = body;
-    }
-  }
+    },
+  },
 };
 </script>
 

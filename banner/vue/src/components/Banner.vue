@@ -18,8 +18,8 @@ export default {
     headline: String,
     strapline: String,
     background: Object,
-    link: Object
-  }
+    link: Object,
+  },
 };
 </script>
 
