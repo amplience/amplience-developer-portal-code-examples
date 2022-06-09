@@ -8,7 +8,7 @@
 </script>
 
 <main>
-  {#await client.getContentItemByKey('banner-example') then content}
-    <Banner {...content.body} />
+  {#await client.getContentItemByKey('banner-example') then { body: banner }}
+    <Banner {...banner} />
   {/await}
 </main>
