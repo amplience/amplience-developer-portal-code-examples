@@ -1,5 +1,5 @@
 import React from 'react';
-import './banner.css';
+import './styles.css';
 
 const Banner = ({ headline, strapline, background = {}, link = {} }) => {
   return (
