@@ -4,7 +4,7 @@
 
 Repository contains all code sandbox examples for different frameworks used in [Amplience Developer Portal](https://github.com/amplience/amplience-developer-portal) tabbed component. There is an [Amplience code sandbox team space](https://codesandbox.io/dashboard/home?workspace=b99be381-caea-46d9-a375-4761b3fc5157) where each example in separate folder can be [imported](https://codesandbox.io/s/github) as a template and will remain in sync with the main branch. 
 
-The path that needs to be added to the content will be `github/amplience/amplience-developer-portal-code-examples/tree/<branch>/<path-to-example>` and will be available on `https://codesandbox.io/s/github/amplience/amplience-developer-portal-code-examples/tree/<branch>/<path-to-example>` 
+The path that needs to be added to the content form will look like `github/amplience/amplience-developer-portal-code-examples/tree/<branch>/<path-to-example>` and will be available on `https://codesandbox.io/s/github/amplience/amplience-developer-portal-code-examples/tree/<branch>/<path-to-example>` 
 
 ## Setting up content types and content type schemas with DC CLI
 
