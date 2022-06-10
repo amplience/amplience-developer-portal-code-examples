@@ -33,8 +33,8 @@
           "type": "string"
         },
         "image": {
-          "title": "Background image",
-          "description": "The background image of this banner",
+          "title": "Image",
+          "description": "The image for the background of this banner",
           "allOf": [
             {
               "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
@@ -49,12 +49,12 @@
       "properties": {
         "url": {
           "title": "URL",
-          "description": "The url that will be opened when call to action is clicked",
+          "description": "The url that will be opened when link is clicked",
           "type": "string"
         },
         "title": {
           "title": "Title",
-          "description": "Text displayed for the call to action",
+          "description": "Text displayed for the link",
           "type": "string"
         }
       }
