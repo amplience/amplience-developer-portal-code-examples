@@ -12,9 +12,6 @@
   "scripts": {
     "format": "prettier --write  .",
     "prepare": "husky install",
-    "lint": "eslint --ext .js,.ts,.tsx .",
-    "lint:fix": "npm run lint -- --fix",
-    "lint:staged": "npm run format && npm run lint:fix",
     "commitlint": "commitlint --edit \"$1\""
   },
   "repository": {
