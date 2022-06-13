@@ -1,5 +1,8 @@
 {
   "devDependencies": {
+    "@commitlint/cli": "^17.0.2",
+    "@commitlint/config-conventional": "^17.0.2",
+    "husky": "^8.0.0",
     "prettier": "^2.6.2"
   },
   "name": "amplience-developer-portal-code-examples",
@@ -7,7 +10,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "format": "prettier --write  ."
+    "format": "prettier --write  .",
+    "prepare": "husky install",
+    "lint": "eslint --ext .js,.ts,.tsx .",
+    "lint:fix": "npm run lint -- --fix",
+    "lint:staged": "npm run format && npm run lint:fix",
+    "commitlint": "commitlint --edit \"$1\""
   },
   "repository": {
     "type": "git",
