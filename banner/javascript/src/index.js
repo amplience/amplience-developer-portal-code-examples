@@ -23,6 +23,5 @@ function renderBanner(banner) {
   <a href="${link.url}"> ${link.title} </a>
 </section>
 `;
+  document.body.innerHTML = template;
 }
-
-document.body.innerHTML = template;
