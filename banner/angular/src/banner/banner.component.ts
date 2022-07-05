@@ -7,11 +7,11 @@ export interface Banner extends ContentBody {
   background: {
     image: Image;
     alt: string;
-  }
+  };
   link: {
-    title: string,
-    url: string
-  }
+    title: string;
+    url: string;
+  };
 }
 @Component({
   selector: 'app-banner',

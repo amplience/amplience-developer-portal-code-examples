@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  name: 'Banner',
+  name: 'BannerComponent',
   props: {
     headline: String,
     strapline: String,
@@ -59,3 +59,4 @@ a:hover {
   background-color: rgba(0, 0, 0, 1);
 }
 </style>
+`

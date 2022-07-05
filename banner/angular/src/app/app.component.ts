@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {  ContentClient } from 'dc-delivery-sdk-js';
+import { ContentClient } from 'dc-delivery-sdk-js';
 import { Banner } from 'src/banner/banner.component';
-
 
 @Component({
   selector: 'app-root',
@@ -16,7 +15,9 @@ export class AppComponent implements OnInit {
   });
 
   async ngOnInit() {
-    const { body } = await this.client.getContentItemByKey<Banner>(this.deliveryKey);
+    const { body } = await this.client.getContentItemByKey<Banner>(
+      this.deliveryKey
+    );
     this.banner = body;
   }
 }

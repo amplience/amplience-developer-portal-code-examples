@@ -1,6 +1,4 @@
 {
-    "node": "16",
-    "container": {
-      "node": "16"
-    }
-  }
+  "node": "16",
+  "template": "vue3"
+}
