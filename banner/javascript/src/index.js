@@ -1,7 +1,8 @@
+import './styles.css';
+import { ContentClient } from 'dc-delivery-sdk-js';
+
 const deliveryKey = 'banner-example';
-const client = new ampDynamicContent.ContentClient({
-  hubName: 'ampengineering',
-});
+const client = new ContentClient({ hubName: 'ampengineering' });
 
 client
   .getContentItemByKey(deliveryKey)
@@ -13,19 +14,15 @@ function renderBanner(banner) {
   }
   const { headline, strapline, background, link } = banner;
   const template = `
-    <section class="banner">
-      <header>
-        <h1>${headline}</h1>
-        <h2>${strapline}</h2>
-      </header>
-      <img
-        src="${background.image.url().build()}"
-        alt="${background.alt}" 
-      />
-      <a href=${link.url}>
-        ${link.title}
-      </a>
-    </section>
-  `;
-  document.body.innerHTML = template;
+<section class="banner">
+  <header>
+    <h1>${headline}</h1>
+    <h2>${strapline}</h2>
+  </header>
+  <img src="${background.image.url().build()}" alt="${background.alt}" />
+  <a href="${link.url}"> ${link.title} </a>
+</section>
+`;
 }
+
+document.body.innerHTML = template;
