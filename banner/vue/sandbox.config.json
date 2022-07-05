@@ -1,4 +1,3 @@
 {
-  "node": "16",
-  "template": "vue3"
+  "node": "16"
 }
