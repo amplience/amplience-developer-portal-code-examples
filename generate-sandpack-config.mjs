@@ -69,7 +69,7 @@ function mapFileNameToCode(fileMap, file) {
   };
 }
 
-function readAllFilesFromBlob(dirname = './src/**/*', files = []) {
+function readAllFilesFromBlob(dirname = './src', files = []) {
   const directory = path.join(dirname);
 
   const fileNames = fs.readdirSync(directory);
@@ -84,5 +84,5 @@ function readAllFilesFromBlob(dirname = './src/**/*', files = []) {
     }
   });
 
-  return files.reduce(mapFileNameToCode, {});
+  return files.map(fileName => `/${fileName}`).reduce(mapFileNameToCode, {});
 }
