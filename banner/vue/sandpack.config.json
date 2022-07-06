@@ -1,4 +1,5 @@
 {
+  "template": "vue3",
   "files": ["/src/App.vue", "/src/components/Banner.vue"],
   "customSetup": {
     "environment": "vue-cli"
