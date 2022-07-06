@@ -1,5 +1,4 @@
 {
-  "template": "angular",
   "files": [
     "/src/App.js",
     "/src/components/Banner/index.js",
