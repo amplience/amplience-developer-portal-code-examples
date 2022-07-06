@@ -2,9 +2,12 @@
   "files": [
     "/src/App.js",
     "/src/components/Banner/index.js",
-    "/src/components/Banner/styles.css"
+    "/src/components/Banner/styles.css",
+    "/src/index.js",
+    "/src/styles.css"
   ],
   "customSetup": {
+    "entry": "/src/index.js",
     "environment": "create-react-app"
   }
 }
