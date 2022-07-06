@@ -1,0 +1,10 @@
+{
+  "files": [
+    "/src/App.js",
+    "/src/components/Banner/index.js",
+    "/src/components/Banner/styles.css"
+  ],
+  "customSetup": {
+    "environment": "create-react-app"
+  }
+}

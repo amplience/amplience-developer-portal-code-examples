@@ -1,0 +1,7 @@
+{
+  "files": ["/src/App.svelte", "/src/Banner.svelte", "/src/main.js"],
+  "customSetup": {
+    "environment": "svelte"
+  },
+  "template": "svelte"
+}

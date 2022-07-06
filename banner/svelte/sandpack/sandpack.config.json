@@ -1,0 +1,26 @@
+{
+  "files": {
+    "/src/App.svelte": "<script>\n  import Banner from './Banner.svelte';\n  import { ContentClient } from 'dc-delivery-sdk-js';\n\n  const client = new ContentClient({\n    hubName: 'ampengineering',\n  });\n</script>\n\n<main>\n  {#await client.getContentItemByKey('banner-example') then { body: banner }}\n    <Banner {...banner} />\n  {/await}\n</main>\n",
+    "/src/Banner.svelte": "<script>\n  export let headline;\n  export let strapline;\n  export let background;\n  export let link;\n</script>\n\n<section class=\"banner\">\n  <header>\n    <h1>{headline}</h1>\n    <h2>{strapline}</h2>\n  </header>\n  <img src={background.image.url().build()} alt={background.alt} />\n  <a href={link?.url}>{link?.title}</a>\n</section>\n\n<style>\n  @import url(https://fonts.googleapis.com/css?family=Roboto);\n\n  .banner {\n    font-family: Roboto, Arial, Helvetica, sans-serif;\n    position: relative;\n    width: 100%;\n    min-width: 500px;\n  }\n\n  .banner h1 {\n    font-size: 30px;\n  }\n\n  .banner header {\n    position: absolute;\n    top: 20px;\n    width: 100%;\n    padding: 0 20px;\n    text-align: left;\n    color: white;\n  }\n\n  .banner img {\n    width: 100%;\n    height: auto;\n  }\n\n  .banner a {\n    position: absolute;\n    bottom: 20px;\n    background-color: rgba(0, 0, 0, 0.5);\n    color: white;\n    right: 20px;\n    padding: 10px;\n    text-decoration: none;\n  }\n\n  .banner a:hover {\n    background-color: rgba(0, 0, 0, 1);\n  }\n</style>\n",
+    "/src/main.js": "import App from './App.svelte';\n\nconst app = new App({\n  target: document.getElementById('app'),\n});\n\nexport default app;\n"
+  },
+  "customSetup": {
+    "environment": "svelte",
+    "name": "svelte",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+      "dev": "vite",
+      "build": "vite build",
+      "preview": "vite preview"
+    },
+    "devDependencies": {
+      "@sveltejs/vite-plugin-svelte": "^1.0.0-next.30",
+      "svelte": "^3.44.0",
+      "vite": "^2.9.9"
+    },
+    "dependencies": { "dc-delivery-sdk-js": "^0.11.0" }
+  },
+  "template": "svelte"
+}

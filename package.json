@@ -24,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/amplience/amplience-developer-portal-code-examples/issues"
   },
-  "homepage": "https://github.com/amplience/amplience-developer-portal-code-examples#readme"
+  "homepage": "https://github.com/amplience/amplience-developer-portal-code-examples#readme",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
 }
