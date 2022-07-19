@@ -3,86 +3,116 @@ import _ from 'lodash';
 import fs from 'fs';
 import path from 'path';
 
-let __dirname = path.resolve(path.dirname(''));
+const examples = ['banner'];
 
-try {
-  const config = fs.readFileSync(
-    path.join(__dirname, 'sandpack.config.json'),
-    'utf8'
-  );
+console.log('Sandpack config factory 🏭');
 
-  const packageJson = fs.readFileSync(
-    path.join(__dirname, 'package.json'),
-    'utf8'
-  );
+examples.forEach(example => {
+  let __dirname = path.join(example);
 
-  const parsedPackage = JSON.parse(packageJson);
-  const parsedConfig = JSON.parse(config);
+  const framworks = fs.readdirSync(__dirname);
 
-  const { files } = parsedConfig;
+  framworks.map(framwork => path.join(__dirname, framwork)).map(createConfig);
+});
 
-  let expandedFiles = [];
+function createConfig(dirname) {
+  let __dirname = path.join(dirname);
 
-  if (_.isArray(files)) {
-    expandedFiles = files.reduce(mapFileNameToCode, {});
-  } else {
-    expandedFiles = readAllFilesFromBlob(files);
-  }
+  const mapFileNameToCode = mapFileNameToCodeFactory(__dirname);
+  const readAllFilesFromBlob = readAllFilesFromBlobFactory(mapFileNameToCode);
 
-  const dirname = path.join(__dirname, 'sandpack');
+  try {
+    const config = fs.readFileSync(
+      path.join(__dirname, 'sandpack.config.json'),
+      'utf8'
+    );
 
-  if (!fs.existsSync(dirname)) {
-    fs.mkdirSync(dirname);
-  }
+    const packageJson = fs.readFileSync(
+      path.join(__dirname, 'package.json'),
+      'utf8'
+    );
 
-  fs.writeFileSync(
-    path.join(__dirname, 'sandpack', 'sandpack.config.json'),
-    JSON.stringify({
+    const parsedPackage = JSON.parse(packageJson);
+    const parsedConfig = JSON.parse(config);
+
+    const { files } = parsedConfig;
+
+    let expandedFiles = [];
+
+    if (_.isArray(files)) {
+      expandedFiles = files.reduce(mapFileNameToCode, {});
+    } else {
+      expandedFiles = readAllFilesFromBlob(path.join(__dirname, files));
+    }
+
+    const dirname = path.join(__dirname, '.sandpack');
+
+    if (!fs.existsSync(dirname)) {
+      fs.mkdirSync(dirname);
+    }
+
+    const generated = {
       ...parsedConfig,
       files: expandedFiles,
       customSetup: {
         ...parsedConfig.customSetup,
         ...parsedPackage,
       },
-    })
-  );
-} catch (err) {
-  console.error(err.message);
+    };
+
+    const generatedPath = path.join(
+      __dirname,
+      '.sandpack',
+      'sandpack.config.json'
+    );
+
+    fs.writeFileSync(generatedPath, JSON.stringify(generated));
+
+    console.log(`created: ${generatedPath}`);
+  } catch (err) {
+    console.error(err.message);
+  }
 }
 
-function mapFileNameToCode(fileMap, file) {
-  if (_.isPlainObject(file)) {
-    const { title } = file;
+function mapFileNameToCodeFactory(__dirname) {
+  return function mapFileNameToCode(fileMap, file) {
+    if (_.isPlainObject(file)) {
+      const { title } = file;
 
-    const code = fs.readFileSync(path.join(__dirname, title), 'utf8');
+      const code = fs.readFileSync(path.join(__dirname, title), 'utf8');
+
+      return {
+        ...fileMap,
+        [title]: code,
+      };
+    }
+    const code = fs.readFileSync(path.join(__dirname, file), 'utf8');
 
     return {
       ...fileMap,
-      [title]: code,
+      [file]: code,
     };
-  }
-  const code = fs.readFileSync(path.join(__dirname, file), 'utf8');
-
-  return {
-    ...fileMap,
-    [file]: code,
   };
 }
 
-function readAllFilesFromBlob(dirname = './src', files = []) {
-  const directory = path.join(dirname);
+function readAllFilesFromBlobFactory(__dirname = '.') {
+  const mapFileNameToCode = mapFileNameToCodeFactory('.');
 
-  const fileNames = fs.readdirSync(directory);
+  return function readAllFilesFromBlob(dirname = './src', files = []) {
+    const directory = path.join(dirname);
 
-  fileNames.forEach(file => {
-    const absolute = path.join(directory, file);
+    const fileNames = fs.readdirSync(directory);
 
-    if (fs.statSync(absolute).isDirectory()) {
-      readAllFilesFromBlob(absolute, files);
-    } else {
-      files.push(absolute);
-    }
-  });
+    fileNames.forEach(file => {
+      const absolute = path.join(directory, file);
 
-  return files.map(fileName => `/${fileName}`).reduce(mapFileNameToCode, {});
+      if (fs.statSync(absolute).isDirectory()) {
+        readAllFilesFromBlob(absolute, files);
+      } else {
+        files.push(absolute);
+      }
+    });
+
+    return files.map(fileName => `/${fileName}`).reduce(mapFileNameToCode, {});
+  };
 }
