@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+node ./generate-sandpack-config.mjs
+
+git add banner/angular/.sandpack/sandpack.config.json
+git add banner/javascript/.sandpack/sandpack.config.json
+git add banner/react/.sandpack/sandpack.config.json
+git add banner/svelte/.sandpack/sandpack.config.json
+git add banner/vue/.sandpack/sandpack.config.json
