@@ -14,6 +14,8 @@ await Promise.all(examples.map(createExample));
 async function createExample(example) {
   let dirname = path.join('./examples', example);
 
+  console.log(`creating example: ${example}`);
+
   const frameworks = await fs.readdir(dirname);
 
   await Promise.all(
@@ -46,7 +48,7 @@ async function createConfig(basePath) {
 
   let expandedFiles = [];
 
-  if (_.isArray(files)) {
+  if (Array.isArray(files)) {
     expandedFiles = await files.reduce(mapFileNameToCode, Promise.resolve({}));
   } else {
     expandedFiles = await readAllFilesFromBlob([], path.join(files));
