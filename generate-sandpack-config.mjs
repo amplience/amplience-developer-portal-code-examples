@@ -29,7 +29,10 @@ async function createConfig(basePath) {
   let dirname = path.join(basePath);
 
   const mapFileNameToCode = mapFileNameToCodeFactory(dirname);
-  const readAllFilesFromBlob = readAllFilesFromBlobFactory(dirname);
+  const readAllFilesFromBlob = readAllFilesFromBlobFactory(
+    dirname,
+    mapFileNameToCode
+  );
 
   const [config, packageJson] = await Promise.all([
     fs.readFile(path.join(dirname, 'sandpack.config.json'), 'utf8'),
@@ -94,9 +97,7 @@ function mapFileNameToCodeFactory(dirname) {
   };
 }
 
-function readAllFilesFromBlobFactory(dirname) {
-  const mapFileNameToCode = mapFileNameToCodeFactory(dirname);
-
+function readAllFilesFromBlobFactory(dirname, mapFileNameToCode) {
   return async function readAllFilesFromBlob(files = [], ...dirnames) {
     const directory = path.join(dirname, ...dirnames);
 
