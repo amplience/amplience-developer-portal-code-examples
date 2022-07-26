@@ -1,5 +1,4 @@
 import _ from 'lodash';
-
 import path from 'path';
 import fs from 'fs/promises';
 
@@ -36,15 +35,12 @@ async function createConfig(basePath) {
     mapFileNameToCode
   );
 
-  const [config, packageJson] = await Promise.all([
-    fs.readFile(path.join(dirname, 'sandpack.config.json'), 'utf8'),
-    fs.readFile(path.join(dirname, 'package.json'), 'utf8'),
+  const [config, packageJSON] = await Promise.all([
+    getSandpackConfig(dirname),
+    getPackageJson(dirname),
   ]);
 
-  const parsedPackage = JSON.parse(packageJson);
-  const parsedConfig = JSON.parse(config);
-
-  const { files } = parsedConfig;
+  const { files } = config;
 
   let expandedFiles = [];
 
@@ -61,11 +57,11 @@ async function createConfig(basePath) {
   }
 
   const generated = {
-    ...parsedConfig,
+    ...config,
     files: expandedFiles,
     customSetup: {
-      ...parsedConfig.customSetup,
-      ...parsedPackage,
+      ...config.customSetup,
+      ...packageJSON,
     },
   };
 
@@ -120,4 +116,26 @@ function readAllFilesFromBlobFactory(dirname, mapFileNameToCode) {
 
     return files.reduce(mapFileNameToCode, Promise.resolve({}));
   };
+}
+
+async function getPackageJson(dirname) {
+  try {
+    const packageJSON = await fs.readFile(
+      path.join(dirname, 'package.json'),
+      'utf8'
+    );
+
+    return JSON.parse(packageJSON);
+  } catch (err) {
+    return {};
+  }
+}
+
+async function getSandpackConfig(dirname) {
+  const config = await fs.readFile(
+    path.join(dirname, 'sandpack.config.json'),
+    'utf8'
+  );
+
+  return JSON.parse(config);
 }
