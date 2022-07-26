@@ -1,3 +1,4 @@
 {
-  "files": ["/test.ios"]
+  "files": ["/test.ios"],
+  "customSetup": { "entry": "/test.ios" }
 }
