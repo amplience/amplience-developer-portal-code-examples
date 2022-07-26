@@ -1,4 +1,5 @@
 {
   "files": ["/test.ios"],
-  "customSetup": { "entry": "/test.ios" }
+  "customSetup": { "entry": "/test.ios" },
+  "hidePreview": true
 }

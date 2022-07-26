@@ -1,4 +1,5 @@
 {
   "files": ["/test.kt"],
-  "customSetup": { "entry": "/test.kt" }
+  "customSetup": { "entry": "/test.kt" },
+  "hidePreview": true
 }
