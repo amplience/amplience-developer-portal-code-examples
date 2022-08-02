@@ -1,0 +1,13 @@
+{
+  "files": [
+    "/index.html",
+    "/src/styles.css",
+    { "title": "/src/index.js", "active": true }
+  ],
+  "customSetup": {
+    "environment": "parcel",
+    "entry": "/index.html"
+  },
+
+  "template": "vanilla-ts"
+}
