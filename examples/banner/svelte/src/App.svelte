@@ -3,7 +3,7 @@
   import { ContentClient } from 'dc-delivery-sdk-js';
 
   const client = new ContentClient({
-    hubName: 'ampengineering',
+    hubName: 'docsportal',
   });
 </script>
 

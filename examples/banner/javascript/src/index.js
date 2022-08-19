@@ -2,7 +2,7 @@ import './styles.css';
 import { ContentClient } from 'dc-delivery-sdk-js';
 
 const deliveryKey = 'banner-example';
-const client = new ContentClient({ hubName: 'ampengineering' });
+const client = new ContentClient({ hubName: 'docsportal' });
 
 client
   .getContentItemByKey(deliveryKey)

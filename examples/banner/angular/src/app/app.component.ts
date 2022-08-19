@@ -11,7 +11,7 @@ export class AppComponent implements OnInit {
   banner?: Banner;
   deliveryKey = 'banner-example';
   client = new ContentClient({
-    hubName: 'ampengineering',
+    hubName: 'docsportal',
   });
 
   async ngOnInit() {
