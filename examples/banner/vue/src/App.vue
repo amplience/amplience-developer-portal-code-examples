@@ -15,7 +15,7 @@ export default {
   },
   data: function () {
     return {
-      client: new ContentClient({ hubName: 'ampengineering' }),
+      client: new ContentClient({ hubName: 'docsportal' }),
       deliveryKey: 'banner-example',
       banner: null,
     };

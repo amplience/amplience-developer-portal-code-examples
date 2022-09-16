@@ -4,7 +4,7 @@ import { ContentClient } from 'dc-delivery-sdk-js';
 import Banner from './components/Banner';
 
 const client = new ContentClient({
-  hubName: 'ampengineering',
+  hubName: 'docsportal',
 });
 
 const deliveryKey = 'banner-example';
