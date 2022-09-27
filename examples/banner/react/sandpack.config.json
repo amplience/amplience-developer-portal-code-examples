@@ -4,7 +4,7 @@
     "/src/components/Banner/index.js",
     "/src/components/Banner/styles.css",
     "/src/index.js",
-    "/src/styles.css"
+    { "title": "/src/styles.css", "hidden": true }
   ],
   "customSetup": {
     "entry": "/src/index.js",

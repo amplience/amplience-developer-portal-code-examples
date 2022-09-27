@@ -1,5 +1,9 @@
 {
-  "files": ["/src/App.svelte", "/src/Banner.svelte", "/src/main.js"],
+  "files": [
+    { "title": "/src/App.svelte", "active": true },
+    "/src/Banner.svelte",
+    "/src/main.js"
+  ],
   "customSetup": {
     "entry": "/src/main.js",
     "environment": "svelte"

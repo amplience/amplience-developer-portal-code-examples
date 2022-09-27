@@ -77,13 +77,13 @@ function mapFileNameToCodeFactory(dirname) {
     const fileMap = await fileMapPromise;
 
     if (_.isPlainObject(file)) {
-      const { title } = file;
+      const { title, ...options } = file;
 
       const code = await fs.readFile(path.join(dirname, title), 'utf8');
 
       return {
         ...fileMap,
-        [title]: code,
+        [title]: { code, ...options },
       };
     }
     const code = await fs.readFile(path.join(dirname, file), 'utf8');
