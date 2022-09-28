@@ -1,4 +1,13 @@
 {
   "template": "angular",
-  "files": "/src"
+  "files": [
+    { "title": "/src/app/app.component.ts", "active": true },
+    "/src/app/app.component.html",
+    { "title": "/src/app/app.component.css", "hidden": true },
+    { "title": "/src/app/app.module.ts", "hidden": true },
+
+    "/src/banner/banner.component.ts",
+    "/src/banner/banner.component.html",
+    "/src/banner/banner.component.css"
+  ]
 }

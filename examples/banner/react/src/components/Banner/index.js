@@ -1,4 +1,3 @@
-import React from 'react';
 import './styles.css';
 
 const Banner = ({ headline, strapline, background = {}, link = {} }) => {
