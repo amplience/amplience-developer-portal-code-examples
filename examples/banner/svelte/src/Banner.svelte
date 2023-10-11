@@ -15,44 +15,60 @@
 </section>
 
 <style>
-  @import url(https://fonts.googleapis.com/css?family=Roboto);
+@import url(https://fonts.googleapis.com/css?family=Roboto);
 
-  .banner {
-    font-family: Roboto, Arial, Helvetica, sans-serif;
-    position: relative;
-    width: 100%;
-    min-width: 500px;
-  }
+.banner {
+  font-family: IBM Plex Sans, Arial, Helvetica, sans-serif;
+  position: relative;
+  width: 100%;
+  min-width: 500px;
+}
 
-  .banner h1 {
-    font-size: 30px;
-  }
+.banner h1 {
+  font-family: IBM Plex serif;
+  font-size: 48px;
+  font-weight: 400;
+  background-color: #000c42aa;
+  padding:12px;
+  width:56%;
+}
 
-  .banner header {
-    position: absolute;
-    top: 20px;
-    width: 100%;
-    padding: 0 20px;
-    text-align: left;
-    color: white;
-  }
+.banner h2 {
+  font-size: 16px;
+  font-weight: 400;
+  background-color: #000c42aa;
+  padding:12px;
+  width:56%;
+}
 
-  .banner img {
-    width: 100%;
-    height: auto;
-  }
+.banner header {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  padding: 0 24px;
+  text-align: left;
+  color: white;
+}
 
-  .banner a {
-    position: absolute;
-    bottom: 20px;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    right: 20px;
-    padding: 10px;
-    text-decoration: none;
-  }
+.banner img {
+  width: 100%;
+  height: auto;
+}
 
-  .banner a:hover {
-    background-color: rgba(0, 0, 0, 1);
-  }
+.banner a {
+  position: absolute;
+  bottom: 40px;
+  background-color: #000c42;
+  font-weight: 400;
+  color: white;
+  left: 24px;
+  padding: 16px;
+  text-decoration: none;
+}
+
+.banner a:hover {
+  background-color: rgba(50, 139, 241);
+  color: white;
+
+}
 </style>

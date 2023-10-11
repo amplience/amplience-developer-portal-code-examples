@@ -25,38 +25,60 @@ export default {
 
 <style scoped>
 @import url(https://fonts.googleapis.com/css?family=Roboto);
-section {
-  font-family: Roboto, Arial, Helvetica, sans-serif;
+
+.banner {
+  font-family: IBM Plex Sans, Arial, Helvetica, sans-serif;
   position: relative;
   width: 100%;
   min-width: 500px;
 }
-h1 {
-  font-size: 30px;
+
+.banner h1 {
+  font-family: IBM Plex serif;
+  font-size: 48px;
+  font-weight: 400;
+  background-color: #000c42aa;
+  padding:12px;
+  width:56%;
 }
-header {
+
+.banner h2 {
+  font-size: 16px;
+  font-weight: 400;
+  background-color: #000c42aa;
+  padding:12px;
+  width:56%;
+}
+
+.banner header {
   position: absolute;
-  top: 20px;
+  top: 0px;
   width: 100%;
-  padding: 0 20px;
+  padding: 0 24px;
   text-align: left;
   color: white;
 }
-img {
+
+.banner img {
   width: 100%;
   height: auto;
 }
-a {
+
+.banner a {
   position: absolute;
-  bottom: 20px;
-  background-color: rgba(0, 0, 0, 0.5);
+  bottom: 40px;
+  background-color: #000c42;
+  font-weight: 400;
   color: white;
-  right: 20px;
-  padding: 10px;
+  left: 24px;
+  padding: 16px;
   text-decoration: none;
 }
-a:hover {
-  background-color: rgba(0, 0, 0, 1);
+
+.banner a:hover {
+  background-color: rgba(50, 139, 241);
+  color: white;
+
 }
 </style>
 `
